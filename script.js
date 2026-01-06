@@ -37,8 +37,8 @@ function renderQuestion(index) {
 
   const backBtn = document.createElement('button');
   backBtn.className = 'back-to-topics';
-  backBtn.textContent = '← 英語クイズ - トップに戻る';
-  backBtn.onclick = () => showHome();
+  backBtn.textContent = '← トップに戻る';
+  backBtn.onclick = () => { location.href = 'quiz.html'; };
   card.appendChild(backBtn);
 
   const title = document.createElement('h2');

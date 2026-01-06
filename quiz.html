@@ -37,14 +37,15 @@
     /* subtle fade for results */
     #result{transition:opacity .18s ease,transform .18s ease;opacity:1}
 
-    nav.site-nav{background:#fff;border-bottom:1px solid #ddd;padding:12px 20px;display:flex;flex-direction:column;gap:12px}
-    nav.site-nav > div:first-child{font-size:18px}
-    nav.site-nav > div:last-child{display:flex;flex-direction:column;gap:8px}
+    nav.site-nav{background:#fff;border-bottom:1px solid #ddd;padding:12px 20px;position:relative}
+    .menu-toggle{display:block;background:var(--brand);color:#fff;border:none;padding:10px 16px;border-radius:6px;cursor:pointer;font-weight:600;font-size:16px}
+    nav.site-nav > div:last-child{display:none;flex-direction:column;gap:8px;margin-top:12px}
+    nav.site-nav.open > div:last-child{display:flex}
     nav.site-nav a{text-decoration:none;color:var(--brand);font-weight:500;padding:10px 12px;background:#f8f9fa;border-radius:6px;display:block;text-align:center}
     nav.site-nav a:hover{background:#e9ecef}
     @media(min-width:768px){
-      nav.site-nav{flex-direction:row;justify-content:space-between;align-items:center;gap:0}
-      nav.site-nav > div:last-child{flex-direction:row;gap:0}
+      .menu-toggle{display:none}
+      nav.site-nav > div:last-child{display:flex!important;flex-direction:row;gap:0;margin-top:0}
       nav.site-nav a{display:inline;padding:8px 12px;background:transparent;margin-right:15px}
       nav.site-nav a:last-child{margin-right:0}
       nav.site-nav a:hover{background:transparent;text-decoration:underline}
@@ -97,7 +98,7 @@
   <a href="#quiz" class="skip-link">クイズへスキップ</a>
 
   <nav class="site-nav">
-    <div><strong>しーぴーえいご</strong></div>
+    <button class="menu-toggle" onclick="this.parentElement.classList.toggle('open')">☰ メニュー</button>
     <div>
       <a href="index.html">トップ</a>
       <a href="quiz.html" aria-current="page">英語クイズ</a>
