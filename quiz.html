@@ -171,5 +171,116 @@
   </footer>
 
   <script src="questions.js"></script>
+  <script>
+    // Initialize quiz UI
+    document.addEventListener('DOMContentLoaded', function() {
+      const counts = {
+        '資産': 0,
+        '負債': 0,
+        '収益': 0,
+        '費用': 0,
+        '勘定科目等': 0
+      };
+      
+      if (typeof questions !== 'undefined') {
+        questions.forEach(q => {
+          if (q.subcategory) {
+            counts[q.subcategory]++;
+          }
+          counts['勘定科目等']++;
+        });
+      }
+      
+      // Update counts in UI
+      document.querySelectorAll('.count').forEach(el => {
+        const key = el.getAttribute('data-subcategory') || el.getAttribute('data-subject');
+        el.textContent = (counts[key] || 0) + '問';
+      });
+      
+      // Add click handlers for subject cards
+      document.querySelectorAll('.subject-card').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const subcategory = this.getAttribute('data-subcategory');
+          const subject = this.getAttribute('data-subject');
+          const filtered = questions.filter(q => {
+            return subcategory ? q.subcategory === subcategory : true;
+          });
+          
+          if (filtered.length === 0) return;
+          
+          // Shuffle and select 10 questions
+          const shuffled = filtered.sort(() => Math.random() - 0.5).slice(0, 10);
+          displayQuiz(shuffled);
+        });
+      });
+    });
+    
+    function displayQuiz(quizQuestions) {
+      const quizContainer = document.getElementById('quiz');
+      const homeContainer = document.getElementById('quiz-home');
+      homeContainer.classList.add('hidden');
+      quizContainer.classList.remove('hidden');
+      
+      let currentQuestion = 0;
+      
+      function showQuestion() {
+        const q = quizQuestions[currentQuestion];
+        quizContainer.innerHTML = `
+          <div class="card">
+            <div class="progress-bar" style="display:block">
+              <div class="progress-fill" role="progressbar" style="width:${((currentQuestion + 1) / quizQuestions.length * 100)}%"></div>
+            </div>
+            <div class="progress">${currentQuestion + 1} / ${quizQuestions.length}</div>
+            <p><strong>${q.question}</strong></p>
+            <p style="color:var(--muted);font-size:14px">${q.translation}</p>
+            <ul class="options">
+              ${q.choices.map((choice, i) => `
+                <li>
+                  <label>
+                    <input type="radio" name="answer" value="${i}">
+                    ${choice}
+                  </label>
+                </li>
+              `).join('')}
+            </ul>
+            <button onclick="checkAnswer(${q.answer}, ${currentQuestion}, ${quizQuestions.length})">答える</button>
+            <div id="result"></div>
+          </div>
+        `;
+      }
+      
+      window.checkAnswer = function(correctAnswer, questionNum, total) {
+        const selected = document.querySelector('input[name="answer"]:checked');
+        if (!selected) return;
+        
+        const isCorrect = parseInt(selected.value) === correctAnswer;
+        const resultDiv = document.getElementById('result');
+        
+        if (isCorrect) {
+          resultDiv.innerHTML = '<div style="color:var(--success);background:#ecfdf5;padding:12px;border-radius:6px;margin-top:12px">✓ 正解です！</div>';
+          setTimeout(() => {
+            currentQuestion++;
+            if (currentQuestion < quizQuestions.length) {
+              showQuestion();
+            } else {
+              quizContainer.innerHTML = '<div class="card"><h2>クイズ完了！</h2><p>お疲れ様でした。</p><button onclick="location.reload()">戻る</button></div>';
+            }
+          }, 1500);
+        } else {
+          resultDiv.innerHTML = `<div style="color:var(--error);background:#fef2f2;padding:12px;border-radius:6px;margin-top:12px">✗ 不正解。正解は: <strong>${quizQuestions[questionNum].choices[correctAnswer]}</strong></div>`;
+          setTimeout(() => {
+            currentQuestion++;
+            if (currentQuestion < quizQuestions.length) {
+              showQuestion();
+            } else {
+              quizContainer.innerHTML = '<div class="card"><h2>クイズ完了！</h2><p>お疲れ様でした。</p><button onclick="location.reload()">戻る</button></div>';
+            }
+          }, 2000);
+        }
+      };
+      
+      showQuestion();
+    }
+  </script>
 </body>
 </html>
