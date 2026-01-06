@@ -2,7 +2,7 @@ const questions = [
   {
     id: 1,
     question: "The company increased its (　), improving short-term liquidity.",
-    translation: "会社は短期的な流動性を高めるために現金及び預金を増やした。",
+    translation: "会社は現金及び预金を増やし、短期的な流動性を改善した。",
     choices: ["Cash and deposits", "Short-term loans receivable", "Securities"],
     meanings: ["現金及び預金", "短期貸付金", "有価証券"],
     answer: 0,
@@ -24,7 +24,7 @@ const questions = [
   {
     id: 3,
     question: "The company holds (　) as negotiable instruments awaiting payment.",
-    translation: "会社は支払を待つための受取手形を保有している。",
+    translation: "会社は支払期日を待つ受取手形を保有している。",
     choices: ["Notes receivable - trade", "Accounts receivable - trade", "Accrued revenue"],
     meanings: ["受取手形", "売掛金", "未収収益"],
     answer: 0,
@@ -35,7 +35,7 @@ const questions = [
   {
     id: 4,
     question: "Sales on credit are recorded as (　) until cash is received.",
-    translation: "掛売上は回収されるまで売掛金として記録される。",
+    translation: "掛け売上は現金が回収されるまで売掛金として計上される。",
     choices: ["Accounts receivable - trade", "Advances received", "Securities"],
     meanings: ["売掛金", "前受金", "有価証券"],
     answer: 0,
@@ -57,7 +57,7 @@ const questions = [
   {
     id: 6,
     question: "Materials held for production are reported as (　).",
-    translation: "生産用に保有している原材料として報告される。",
+    translation: "生産に使用するために保有している原材料として計上される。",
     choices: ["Raw materials", "Finished goods", "Work in process"],
     meanings: ["原材料", "製品", "仕掛品"],
     answer: 0,
@@ -90,7 +90,7 @@ const questions = [
   {
     id: 9,
     question: "Goodwill from a business acquisition is recorded as (　).",
-    translation: "事業買収から生じたのれんとして記録される。",
+    translation: "事業買収によって生じたのれんとして計上される。",
     choices: ["Goodwill", "Intangible assets", "Investment securities"],
     meanings: ["のれん", "無形固定資産", "投資有価証券"],
     answer: 0,
@@ -101,9 +101,9 @@ const questions = [
   {
     id: 10,
     question: "Software developed for internal use is classified as (　).",
-    translation: "内部使用目的で開発されたソフトウエアとして分類される。",
-    choices: ["Software", "Intangible assets", "Supplies"],
-    meanings: ["ソフトウエア", "無形固定資産", "貯蔵品"],
+    translation: "内部使用目的で開発されたソフトウェアとして分類される。",
+    choices: ["Software", "Patent right", "Supplies"],
+    meanings: ["ソフトウエア", "特許権", "貯蔵品"],
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
@@ -111,8 +111,8 @@ const questions = [
   },
   {
     id: 11,
-    question: "Goods purchased on credit are recorded as (　).",
-    translation: "クレジットで購入した商品は買掛金として記録される。",
+    question: "Goods purchased on credit from suppliers are recorded as (　).",
+    translation: "仕入先から掛けで購入した代金は買掛金として計上される。",
     choices: ["Accounts payable - trade", "Notes payable - trade", "Accrued expenses"],
     meanings: ["買掛金", "支払手形", "未払費用"],
     answer: 0,
@@ -123,7 +123,7 @@ const questions = [
   {
     id: 12,
     question: "Salaries earned by employees but not yet paid are recorded as (　).",
-    translation: "従業員が稼得したがまだ支払われていない給与は未払費用として記録される。",
+    translation: "従業員が既に勤務して発生しているがまだ支払われていない給与は未払費用として計上される。",
     choices: ["Accrued expenses", "Accounts payable - other", "Advances received"],
     meanings: ["未払費用", "未払金", "前受金"],
     answer: 0,
@@ -167,7 +167,7 @@ const questions = [
   {
     id: 16,
     question: "The company recorded (　) for anticipated customer defaults.",
-    translation: "会社は予想される顧客の債務不履行に対して貸倒引当金を計上した。",
+    translation: "会社は見込まれる顧客の債務不履行に備えて貸倒引当金を計上した。",
     choices: ["Allowance for doubtful accounts", "Bad debt expenses", "Provision for bonuses"],
     meanings: ["貸倒引当金", "貸倒損失", "賞与引当金"],
     answer: 0,
@@ -189,7 +189,7 @@ const questions = [
   {
     id: 18,
     question: "The firm issued promissory notes recorded as (　).",
-    translation: "会社は約束手形を発行し、支払手形として記録した。",
+    translation: "会社は約束手形を発行し、支払手形として計上した。",
     choices: ["Notes payable - trade", "Accounts payable - trade", "Short-term borrowings"],
     meanings: ["支払手形", "買掛金", "短期借入金"],
     answer: 0,
@@ -222,7 +222,7 @@ const questions = [
   {
     id: 21,
     question: "The company owns property recorded as (　).",
-    translation: "会社は土地として記録された不動産を所有している。",
+    translation: "会社は土地として計上された不動産を所有している。",
     choices: ["Land", "Buildings", "Structures"],
     meanings: ["土地", "建物", "構築物"],
     answer: 0,
@@ -244,7 +244,7 @@ const questions = [
   {
     id: 23,
     question: "The cumulative depreciation is shown as (　).",
-    translation: "累積減価償却額は減価償却累計額として示される。",
+    translation: "累積減価償却額は減価償却累計額として表示される。",
     choices: ["Accumulated depreciation", "Depreciation", "Impairment losses"],
     meanings: ["減価償却累計額", "減価償却費", "減損損失"],
     answer: 0,
@@ -256,8 +256,8 @@ const questions = [
     id: 24,
     question: "Computer programs are capitalized as (　).",
     translation: "コンピュータプログラムはソフトウエアとして資産計上される。",
-    choices: ["Software", "Intangible assets", "Supplies"],
-    meanings: ["ソフトウエア", "無形固定資産", "貯蔵品"],
+    choices: ["Software", "Patent right", "Supplies"],
+    meanings: ["ソフトウエア", "特許権", "貯蔵品"],
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
@@ -277,7 +277,7 @@ const questions = [
   {
     id: 26,
     question: "The excess of cost over fair value of net assets acquired is recorded as (　) on the balance sheet.",
-    translation: "取得原価が取得した純資産の公正価値を超える部分は、貸借対照表上、のれんとして記録される。",
+    translation: "取得対価が被取得企業の純資産の公正価値を上回る部分は、貸借対照表上、のれんとして計上される。",
     choices: ["Goodwill", "Patent right", "Trademark right"],
     meanings: ["のれん", "特許権", "商標権"],
     answer: 0,
@@ -298,8 +298,8 @@ const questions = [
   },
   {
     id: 28,
-    question: "Expenses incurred but not yet paid are recorded as (　).",
-    translation: "発生したが未払いの費用は未払費用として記録される。",
+    question: "Expenses incurred for services received but not yet paid are recorded as (　).",
+    translation: "サービスの提供を受けたが未払いの費用は未払費用として記録される。",
     choices: ["Accrued expenses", "Prepaid expenses", "Accounts payable - trade"],
     meanings: ["未払費用", "前払費用", "買掛金"],
     answer: 0,
@@ -310,7 +310,7 @@ const questions = [
   {
     id: 29,
     question: "Amounts paid in advance are classified as (　).",
-    translation: "前払金額は前払費用として分類される。",
+    translation: "前払いした金額は前払費用として分類される。",
     choices: ["Prepaid expenses", "Accrued expenses", "Advances received"],
     meanings: ["前払費用", "未払費用", "前受金"],
     answer: 0,
@@ -321,7 +321,7 @@ const questions = [
   {
     id: 30,
     question: "Customer deposits received in advance are shown as (　).",
-    translation: "顧客から事前に受け取った預り金は前受金として示される。",
+    translation: "顧客から事前に受け取った金額は前受金として表示される。",
     choices: ["Advances received", "Deposits received", "Accrued expenses"],
     meanings: ["前受金", "預り金", "未払費用"],
     answer: 0,
@@ -408,7 +408,7 @@ const questions = [
   },
   {
     id: 38,
-    question: "The company's (　) increased by 15% compared to the previous year.",
+    question: "The company's (　) increased by 15% year on year.",
     translation: "会社の売上高は前年比15%増加した。",
     choices: ["Net sales", "Operating revenue", "Interest income"],
     meanings: ["売上高", "営業収益", "受取利息"],
@@ -431,7 +431,7 @@ const questions = [
   {
     id: 40,
     question: "Annual depreciation charges are recorded as (　).",
-    translation: "年間減価償却費は減価償却費として記録される。",
+    translation: "年間の減価償却費は減価償却費として計上される。",
     choices: ["Depreciation", "Accumulated depreciation", "Impairment losses"],
     meanings: ["減価償却費", "減価償却累計額", "減損損失"],
     answer: 0,
@@ -442,7 +442,7 @@ const questions = [
   {
     id: 41,
     question: "Costs paid to lenders for borrowing money are recorded as (　).",
-    translation: "借入金に対して貸し手に支払う費用は支払利息として記録される。",
+    translation: "借入金に係る支払利息として計上される。",
     choices: ["Interest expenses", "Commission expenses", "Insurance expenses"],
     meanings: ["支払利息", "支払手数料", "保険料"],
     answer: 0,
@@ -530,7 +530,7 @@ const questions = [
   {
     id: 49,
     question: "Employee salaries and wages are recorded as (　).",
-    translation: "従業員の給与と賃金は給料として記録される。",
+    translation: "従業員の給与および賃金は給与として計上される。",
     choices: ["Salaries", "Bonuses", "Welfare expenses"],
     meanings: ["給料", "賞与", "福利厚生費"],
     answer: 0,
@@ -640,7 +640,7 @@ const questions = [
   {
     id: 59,
     question: "Office supplies and consumables are recorded as (　).",
-    translation: "事務用品及び消耗品は消耗品費として記録される。",
+    translation: "事務用品及び消耗品は消耗品費として計上される。",
     choices: ["Supplies expenses", "Miscellaneous expenses", "Supplies"],
     meanings: ["消耗品費", "雑費", "貯蔵品"],
     answer: 0,
@@ -684,7 +684,7 @@ const questions = [
   {
     id: 63,
     question: "Minor miscellaneous costs are recorded as (　).",
-    translation: "軽微な雑多な費用は雑費として記録される。",
+    translation: "少額の雑費は雑費として計上される。",
     choices: ["Miscellaneous expenses", "Supplies expenses", "Communication expenses"],
     meanings: ["雑費", "消耗品費", "通信費"],
     answer: 0,
@@ -717,7 +717,7 @@ const questions = [
   {
     id: 66,
     question: "Shareholders receive (　) as a return on their investment.",
-    translation: "株主は投資のリターンとして受取配当金を受け取る。",
+    translation: "株主は投資のリターンとして配当を受け取る。",
     choices: ["Dividend income", "Interest income", "Net sales"],
     meanings: ["受取配当金", "受取利息", "売上高"],
     answer: 0,
