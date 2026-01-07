@@ -2,11 +2,18 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>英語クイズ - しーぴーえいご</title>
+  <meta http-equiv="refresh" content="0; url=quiz.html">
+  <title>リダイレクト中... - しーぴーえいご</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    // Immediate redirect
+    window.location.href = 'quiz.html';
+  </script>
+</head>
+<body>
+  <p>英語クイズページにリダイレクトしています... <a href="quiz.html">こちらをクリック</a>してください。</p>
+</body>
+</html>
   <style>
     :root{--bg:#f7f9fc;--card:#fff;--text:#0f1724;--muted:#4b5563;--brand:#1f3c88;--accent:#3b82f6;--focus:#0b5fff;--error:#b91c1c;--success:#047857;--shadow:0 10px 30px rgba(31,60,136,0.08)}
     body{font-family:'Inter','Noto Sans JP',system-ui,-apple-system,'Segoe UI',sans-serif;margin:0;padding:0;background:var(--bg);color:var(--text);}
@@ -96,8 +103,7 @@
     .subject-card:hover{background:linear-gradient(180deg,#f8fafc,#eef2ff);border-color:#cbd5e1;transform:translateY(-2px)}
     .subject-card .count{font-size:14px;color:var(--brand);font-weight:600;background:#eef2ff;padding:4px 10px;border-radius:6px}
 
-    /* explanation area */
-    .explanation{margin-top:8px;font-size:14px;color:var(--muted)}
+    .hidden{display:none!important}
   </style>
 </head>
 <body>
@@ -108,16 +114,17 @@
     <button class="menu-toggle" onclick="this.parentElement.classList.toggle('open')">☰ メニュー</button>
     <div>
       <a href="index.html">トップ</a>
-      <a href="quiz.html" aria-current="page">英語クイズ</a>
+      <a href="quiz.html">英語クイズ</a>
       <a href="account-list.html">勘定科目リスト</a>
+      <a href="audit-quiz.html" aria-current="page">監査論クイズ</a>
       <a href="audit-list.html">監査論用語リスト</a>
       <a href="about.html">サービスについて</a>
     </div>
   </nav>
 
   <header>
-    <h1>英語クイズ</h1>
-    <p>会計英語で即フィードバック</p>
+    <h1>監査論クイズ</h1>
+    <p>監査論用語 — 会計英語で即フィードバック</p>
   </header>
 
   <section>
@@ -126,56 +133,34 @@
       <h2>クイズを始める</h2>
       <p>学習したいカテゴリを選んでください。各カテゴリをクリックするとランダムで10問出題されます。</p>
       
+      <p style="background:#fffbeb;border-left:4px solid #f59e0b;padding:12px;margin-top:16px;font-size:14px;color:var(--text)">
+        <strong>注意：</strong>本クイズは日本の監査論を前提として作成しています。
+      </p>
+      
       <div style="margin:20px 0">
-        <h3 style="font-size:18px;color:var(--brand);margin-bottom:12px;border-bottom:2px solid #eef2ff;padding-bottom:8px">勘定科目クイズ</h3>
-        <p style="background:#fffbeb;border-left:4px solid #f59e0b;padding:12px;margin-bottom:12px;font-size:14px;color:var(--text)">
-          <strong>注意：</strong>本クイズは日本基準を前提として作成しています。
-        </p>
+        <h3 style="font-size:16px;color:var(--muted);margin-bottom:12px">監査論の分類別</h3>
         <div class="subject-cards" role="list">
-          <button class="subject-card" data-category="勘定科目等" data-subcategory="資産" role="listitem" tabindex="0">
-            資産
-            <span class="count" data-key="資産">0問</span>
+          <button class="subject-card" data-subcategory="基本概念" role="listitem" tabindex="0">
+            基本概念
+            <span class="count" data-subcategory="基本概念">0問</span>
           </button>
-          <button class="subject-card" data-category="勘定科目等" data-subcategory="負債" role="listitem" tabindex="0">
-            負債
-            <span class="count" data-key="負債">0問</span>
+          <button class="subject-card" data-subcategory="リスク・手続" role="listitem" tabindex="0">
+            リスク・手続
+            <span class="count" data-subcategory="リスク・手続">0問</span>
           </button>
-          <button class="subject-card" data-category="勘定科目等" data-subcategory="収益" role="listitem" tabindex="0">
-            収益
-            <span class="count" data-key="収益">0問</span>
-          </button>
-          <button class="subject-card" data-category="勘定科目等" data-subcategory="費用" role="listitem" tabindex="0">
-            費用
-            <span class="count" data-key="費用">0問</span>
-          </button>
-          <button class="subject-card" data-category="勘定科目等" role="listitem" tabindex="0">
-            すべての問題
-            <span class="count" data-key="勘定科目等">0問</span>
+          <button class="subject-card" data-subcategory="監査報告" role="listitem" tabindex="0">
+            監査報告
+            <span class="count" data-subcategory="監査報告">0問</span>
           </button>
         </div>
       </div>
       
       <div style="margin:20px 0">
-        <h3 style="font-size:18px;color:var(--brand);margin-bottom:12px;border-bottom:2px solid #eef2ff;padding-bottom:8px">監査論クイズ</h3>
-        <p style="background:#fffbeb;border-left:4px solid #f59e0b;padding:12px;margin-bottom:12px;font-size:14px;color:var(--text)">
-          <strong>注意：</strong>本クイズは日本の監査論を前提として作成しています。
-        </p>
+        <h3 style="font-size:16px;color:var(--muted);margin-bottom:12px">全問題</h3>
         <div class="subject-cards" role="list">
-          <button class="subject-card" data-category="監査論" data-subcategory="基本概念" role="listitem" tabindex="0">
-            基本概念
-            <span class="count" data-key="基本概念">0問</span>
-          </button>
-          <button class="subject-card" data-category="監査論" data-subcategory="リスク・手続" role="listitem" tabindex="0">
-            リスク・手続
-            <span class="count" data-key="リスク・手続">0問</span>
-          </button>
-          <button class="subject-card" data-category="監査論" data-subcategory="監査報告" role="listitem" tabindex="0">
-            監査報告
-            <span class="count" data-key="監査報告">0問</span>
-          </button>
-          <button class="subject-card" data-category="監査論" role="listitem" tabindex="0">
+          <button class="subject-card" data-subject="監査論" role="listitem" tabindex="0">
             すべての問題
-            <span class="count" data-key="監査論">0問</span>
+            <span class="count" data-subject="監査論">0問</span>
           </button>
         </div>
       </div>
@@ -201,11 +186,6 @@
     // Initialize quiz UI
     document.addEventListener('DOMContentLoaded', function() {
       const counts = {
-        '資産': 0,
-        '負債': 0,
-        '収益': 0,
-        '費用': 0,
-        '勘定科目等': 0,
         '基本概念': 0,
         'リスク・手続': 0,
         '監査報告': 0,
@@ -213,32 +193,28 @@
       };
       
       if (typeof questions !== 'undefined') {
-        questions.forEach(q => {
-          if (q.subcategory && counts.hasOwnProperty(q.subcategory)) {
+        const auditQuestions = questions.filter(q => q.category === '監査論');
+        auditQuestions.forEach(q => {
+          if (q.subcategory) {
             counts[q.subcategory]++;
           }
-          if (q.category && counts.hasOwnProperty(q.category)) {
-            counts[q.category]++;
-          }
+          counts['監査論']++;
         });
       }
       
       // Update counts in UI
       document.querySelectorAll('.count').forEach(el => {
-        const key = el.getAttribute('data-key');
-        if (key && counts.hasOwnProperty(key)) {
-          el.textContent = counts[key] + '問';
-        }
+        const key = el.getAttribute('data-subcategory') || el.getAttribute('data-subject');
+        el.textContent = (counts[key] || 0) + '問';
       });
       
       // Add click handlers for subject cards
       document.querySelectorAll('.subject-card').forEach(btn => {
         btn.addEventListener('click', function() {
-          const category = this.getAttribute('data-category');
           const subcategory = this.getAttribute('data-subcategory');
-          
-          const filtered = questions.filter(q => {
-            if (!q.category || q.category !== category) return false;
+          const subject = this.getAttribute('data-subject');
+          const auditQuestions = questions.filter(q => q.category === '監査論');
+          const filtered = auditQuestions.filter(q => {
             return subcategory ? q.subcategory === subcategory : true;
           });
           

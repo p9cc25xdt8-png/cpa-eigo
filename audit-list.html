@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>勘定科目リスト - しーぴーえいご</title>
+  <title>監査論用語リスト - しーぴーえいご</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,26 +61,31 @@
     <div>
       <a href="index.html">トップ</a>
       <a href="quiz.html">英語クイズ</a>
-      <a href="account-list.html" aria-current="page">勘定科目リスト</a>
-      <a href="audit-list.html">監査論用語リスト</a>
+      <a href="account-list.html">勘定科目リスト</a>
+      <a href="audit-list.html" aria-current="page">監査論用語リスト</a>
       <a href="about.html">サービスについて</a>
     </div>
   </nav>
 
   <header>
-    <h1>勘定科目リスト</h1>
-    <p>会計英語の勘定科目一覧</p>
+    <h1>監査論用語リスト</h1>
+    <p>監査論の主要用語 日英対照表</p>
   </header>
 
   <section>
     <div class="card">
-      <h2>貸借対照表</h2>
-      <div id="bs-table"></div>
+      <h2>基本概念</h2>
+      <div id="concept-table"></div>
     </div>
 
     <div class="card">
-      <h2>損益計算書</h2>
-      <div id="pl-table"></div>
+      <h2>リスク・手続</h2>
+      <div id="risk-procedure-table"></div>
+    </div>
+
+    <div class="card">
+      <h2>監査報告</h2>
+      <div id="report-table"></div>
     </div>
   </section>
 
@@ -93,122 +98,117 @@
   </footer>
 
   <script>
-    // 貸借対照表データ（よく使われる勘定科目のみ）
-    const bsData = `【資産の部】
-現金及び預金	Cash and deposits
-受取手形	Notes receivable - trade
-売掛金	Accounts receivable - trade
-貸倒引当金	Allowance for doubtful accounts
-有価証券	Securities
-商品	Merchandise
-製品	Finished goods
-原材料	Raw materials
-仕掛品	Work in process
-貯蔵品	Supplies
-前払費用	Prepaid expenses
-未収収益	Accrued revenue
-短期貸付金	Short-term loans receivable
-未収入金	Accounts receivable - other
-流動資産	Current assets
-建物	Buildings
-構築物	Structures
-機械装置	Machinery and equipment
-車両運搬具	Vehicles
-工具器具備品	Tools, furniture and fixtures
-土地	Land
-建設仮勘定	Construction in progress
-減価償却累計額	Accumulated depreciation
-有形固定資産	Property, plant and equipment
-ソフトウエア	Software
-のれん	Goodwill
-特許権	Patent right
-商標権	Trademark right
-無形固定資産	Intangible assets
-投資有価証券	Investment securities
-関係会社株式	Shares of subsidiaries and associates
-長期貸付金	Long-term loans receivable
-繰延税金資産	Deferred tax assets
-投資その他の資産	Investments and other assets
-固定資産	Non-current assets
-【負債の部】
-支払手形	Notes payable - trade
-買掛金	Accounts payable - trade
-短期借入金	Short-term borrowings
-未払金	Accounts payable - other
-未払費用	Accrued expenses
-未払法人税等	Income taxes payable
-未払消費税等	Accrued consumption taxes
-前受金	Advances received
-預り金	Deposits received
-賞与引当金	Provision for bonuses
-流動負債	Current liabilities
-社債	Bonds payable
-長期借入金	Long-term borrowings
-退職給付引当金	Provision for retirement benefits
-退職給付に係る負債	Retirement benefit liability
-繰延税金負債	Deferred tax liabilities
-固定負債	Non-current liabilities
-【純資産の部】
-資本金	Share capital
-資本剰余金	Capital surplus
-資本準備金	Legal capital surplus
-その他資本剰余金	Other capital surplus
-利益剰余金	Retained earnings
-利益準備金	Legal retained earnings
-繰越利益剰余金	Retained earnings brought forward
-自己株式	Treasury shares
-株主資本	Shareholders' equity
-その他有価証券評価差額金	Valuation difference on available-for-sale securities
-繰延ヘッジ損益	Deferred gains or losses on hedges
-為替換算調整勘定	Foreign currency translation adjustment
-退職給付に係る調整累計額	Remeasurements of defined benefit plans
-評価・換算差額等	Valuation and translation adjustments`;
+    // 基本概念
+    const conceptData = `【基本概念】
+財務諸表監査	Financial statement audit
+監査人	Auditor
+被監査会社	Audited entity
+経営者	Management
+財務諸表	Financial statements
+監査基準	Auditing standards
+一般に公正妥当と認められた監査の基準	Generally Accepted Auditing Standards (GAAS)
+国際監査基準	International Standards on Auditing (ISA)
+監査の目的	Objective of the audit
+合理的保証	Reasonable assurance
+絶対的保証	Absolute assurance
+固有の限界	Inherent limitations
+財務報告	Financial reporting
+【監査プロセス】
+監査計画	Audit planning
+監査範囲	Audit scope
+重要性	Materiality
+リスク評価	Risk assessment
+専門家の利用	Use of an auditor's expert
+内部監査人の業務の利用	Using the work of internal auditors
+監査の結論	Audit conclusion
+【職業倫理】
+職業的懐疑心	Professional skepticism
+職業的判断	Professional judgment
+独立性	Independence
+精神的独立性	Independence of mind
+外観的独立性	Independence in appearance
+利害関係	Conflict of interest
+守秘義務	Confidentiality
+監査契約	Audit engagement
+【品質管理】
+品質管理	Quality control
+監査法人	Audit firm
+業務執行社員	Engagement partner
+チームメンバー	Engagement team
+【ガバナンス】
+監査役	Statutory auditor
+監査役会	Board of statutory auditors
+監査委員会	Audit committee
+内部監査	Internal audit
+内部監査人	Internal auditor`;
 
-    // 損益計算書データ（よく使われる勘定科目のみ）
-    const plData = `【収益】
-売上高	Net sales
-営業収益	Operating revenue
-受取利息	Interest income
-受取配当金	Dividend income
-為替差益	Foreign exchange gains
-固定資産売却益	Gain on sale of non-current assets
-【費用】
-売上原価	Cost of sales
-給料	Salaries
-賞与	Bonuses
-福利厚生費	Welfare expenses
-法定福利費	Legal welfare expenses
-旅費交通費	Travel and transportation expenses
-通信費	Communication expenses
-水道光熱費	Utilities
-消耗品費	Supplies expenses
-広告宣伝費	Advertising expenses
-接待交際費	Entertainment expenses
-会議費	Meeting expenses
-租税公課	Taxes and dues
-減価償却費	Depreciation
-修繕費	Repair expenses
-保険料	Insurance expenses
-地代家賃	Rent expenses
-支払手数料	Commission expenses
-支払利息	Interest expenses
-為替差損	Foreign exchange losses
-固定資産売却損	Loss on sale of non-current assets
-固定資産除却損	Loss on retirement of non-current assets
-減損損失	Impairment losses
-貸倒引当金繰入額	Provision of allowance for doubtful accounts
-貸倒損失	Bad debt expenses
-賞与引当金繰入額	Provision for bonuses
-退職給付費用	Retirement benefit expenses
-研究開発費	Research and development expenses
-雑費	Miscellaneous expenses
-販売費及び一般管理費	Selling, general and administrative expenses
-営業利益	Operating profit
-経常利益	Ordinary profit
-税引前当期純利益	Profit before income taxes
-法人税、住民税及び事業税	Income taxes - current
-法人税等調整額	Income taxes - deferred
-当期純利益	Profit`;
+    // リスク・手続
+    const riskProcedureData = `【リスク】
+監査リスク	Audit risk
+固有リスク	Inherent risk
+統制リスク	Control risk
+発見リスク	Detection risk
+特別な検討を必要とするリスク	Significant risks
+【不正・誤謬】
+不正	Fraud
+誤謬	Error
+不正の兆候	Indicators of fraud
+経営者による内部統制の無効化	Management override of controls
+不正な財務報告	Fraudulent financial reporting
+横領	Misappropriation of assets
+【虚偽表示】
+重要な虚偽表示	Material misstatement
+虚偽表示	Misstatement
+未修正虚偽表示	Uncorrected misstatement
+【内部統制】
+内部統制	Internal control
+内部統制監査	Audit of internal control
+内部統制の不備	Deficiency in internal control
+IT統制	IT controls
+全般統制	General IT controls
+業務処理統制	Application controls
+【監査手続】
+実証手続	Substantive procedures
+統制テスト	Tests of controls
+運用評価手続	Tests of operating effectiveness
+分析的手続	Analytical procedures
+サンプリング	Audit sampling
+実査	Physical inspection
+立会	Observation
+確認	Confirmation
+閲覧	Inspection
+再計算	Recalculation
+再実施	Reperformance
+質問	Inquiry
+【監査証拠】
+監査証拠	Audit evidence
+十分かつ適切な監査証拠	Sufficient and appropriate audit evidence
+監査調書	Audit documentation / Working papers
+経営者確認書	Management representation letter
+【特定項目】
+継続企業の前提	Going concern assumption
+会計上の見積り	Accounting estimates
+比較情報	Comparative information
+期首残高	Opening balances
+関連当事者	Related parties
+後発事象	Subsequent events`;
+
+    // 監査報告
+    const reportData = `【監査意見】
+監査意見（意見表明）	Audit opinion
+無限定適正意見	Unmodified opinion
+限定付適正意見	Qualified opinion
+不適正意見	Adverse opinion
+意見不表明	Disclaimer of opinion
+【監査報告】
+監査報告書	Auditor's report
+追記情報	Emphasis of matter paragraph
+監査上の主要な検討事項	Key audit matters (KAMs)
+【グループ監査】
+構成単位の監査人	Component auditor
+グループ監査	Group audit
+重要な構成単位	Significant component
+連結財務諸表監査	Audit of consolidated financial statements`;
 
     function createTable(data) {
       const lines = data.trim().split('\n');
@@ -229,8 +229,9 @@
       return html;
     }
 
-    document.getElementById('bs-table').innerHTML = createTable(bsData);
-    document.getElementById('pl-table').innerHTML = createTable(plData);
+    document.getElementById('concept-table').innerHTML = createTable(conceptData);
+    document.getElementById('risk-procedure-table').innerHTML = createTable(riskProcedureData);
+    document.getElementById('report-table').innerHTML = createTable(reportData);
   </script>
 </body>
 </html>
