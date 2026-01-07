@@ -9,16 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root{--bg:#f7f9fc;--card:#fff;--text:#0f1724;--muted:#4b5563;--brand:#1f3c88;--accent:#3b82f6;--focus:#0b5fff;--shadow:0 10px 30px rgba(31,60,136,0.08)}
-    body{font-family:'Inter','Noto Sans JP',system-ui,-apple-system,'Segoe UI',sans-serif;margin:0;padding:0;background:var(--bg);color:var(--text);line-height:1.7}
-    header{background:linear-gradient(180deg,var(--brand),#19407a);color:#fff;padding:28px 20px;text-align:center}
-    header h1{font-family:'Noto Sans JP', 'Inter';font-weight:700;margin:0;font-size:22px}
-    .card{background:var(--card);max-width:800px;margin:24px auto;padding:32px;border-radius:10px;box-shadow:var(--shadow)}
+    body{font-family:'Inter','Noto Sans JP',system-ui,-apple-system,'Segoe UI',sans-serif;margin:0;padding:0;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+    header{background:linear-gradient(180deg,var(--brand),#19407a);color:#fff;padding:24px 16px;text-align:center}
+    header h1{font-family:'Noto Sans JP', 'Inter';font-weight:700;margin:0;font-size:20px}
+    .card{background:var(--card);max-width:800px;margin:16px;padding:20px 16px;border-radius:10px;box-shadow:var(--shadow)}
     
-    nav.site-nav{background:#fff;border-bottom:1px solid #ddd;padding:12px 20px;position:relative}
-    .menu-toggle{display:block;background:var(--brand);color:#fff;border:none;padding:10px 16px;border-radius:6px;cursor:pointer;font-weight:600;font-size:16px}
-    nav.site-nav > div:last-child{display:none;flex-direction:column;gap:8px;margin-top:12px}
+    nav.site-nav{background:#fff;border-bottom:1px solid #ddd;padding:12px 16px;position:relative}
+    .menu-toggle{display:block;background:var(--brand);color:#fff;border:none;padding:12px 18px;border-radius:6px;cursor:pointer;font-weight:600;font-size:15px;min-height:44px;touch-action:manipulation}
+    nav.site-nav > div:last-child{display:none;flex-direction:column;gap:10px;margin-top:12px}
     nav.site-nav.open > div:last-child{display:flex}
-    nav.site-nav a{text-decoration:none;color:var(--brand);font-weight:500;padding:10px 12px;background:#f8f9fa;border-radius:6px;display:block;text-align:center}
+    nav.site-nav a{text-decoration:none;color:var(--brand);font-weight:500;padding:12px 16px;background:#f8f9fa;border-radius:6px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:15px;min-height:44px}
     nav.site-nav a:hover{background:#e9ecef}
     @media(min-width:768px){
       .menu-toggle{display:none}
@@ -26,15 +26,25 @@
       nav.site-nav a{display:inline;padding:8px 12px;background:transparent;margin-right:15px}
       nav.site-nav a:last-child{margin-right:0}
       nav.site-nav a:hover{background:transparent;text-decoration:underline}
+      header{padding:28px 20px}
+      header h1{font-size:22px}
+      .card{margin:24px auto;padding:32px}
     }
     
-    h2{color:var(--brand);margin-top:32px;margin-bottom:16px;font-size:20px}
-    p{margin-bottom:16px;color:var(--text)}
-    .disclaimer{background:#fef9e7;border-left:4px solid #f39c12;padding:20px;margin:24px 0;border-radius:6px}
-    .disclaimer h3{color:#d68910;margin-top:0;font-size:18px}
-    .disclaimer p{color:#555;margin-bottom:12px;line-height:1.8}
+    h2{color:var(--brand);margin-top:24px;margin-bottom:14px;font-size:18px}
+    p{margin-bottom:14px;color:var(--text);font-size:15px}
+    .disclaimer{background:#fef9e7;border-left:4px solid #f39c12;padding:16px;margin:20px 0;border-radius:6px}
+    .disclaimer h3{color:#d68910;margin-top:0;font-size:16px}
+    .disclaimer p{color:#555;margin-bottom:12px;line-height:1.8;font-size:14px}
     
-    footer{text-align:center;padding:20px;background:#eee;font-size:14px;margin-top:40px}
+    footer{text-align:center;padding:24px 16px;background:#eee;font-size:13px;margin-top:32px;line-height:1.8}
+    @media(min-width:768px){
+      h2{font-size:20px;margin-top:32px}
+      p{font-size:16px}
+      .disclaimer{padding:20px}
+      .disclaimer h3{font-size:18px}
+      footer{padding:20px;font-size:14px;margin-top:40px}
+    }
   </style>
 </head>
 <body>
