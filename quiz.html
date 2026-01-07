@@ -92,12 +92,26 @@
     /* subject cards */
     .subject-cards{display:grid;grid-template-columns:1fr;gap:10px}
     @media(min-width:560px){.subject-cards{grid-template-columns:repeat(2,1fr)}}
-    .subject-card{background:linear-gradient(180deg,#fff,#f8fafc);border:2px solid #eef2ff;padding:16px;border-radius:10px;cursor:pointer;transition:all 0.2s ease;text-align:left;font-size:15px;font-weight:600;color:var(--brand);display:flex;justify-content:space-between;align-items:center}
-    .subject-card:hover{background:linear-gradient(180deg,#f8fafc,#eef2ff);border-color:#cbd5e1;transform:translateY(-2px)}
+    .subject-card{background:linear-gradient(180deg,#fff,#f8fafc);border:2px solid #eef2ff;padding:16px;border-radius:10px;transition:all 0.2s ease;text-align:left}
+    .subject-card:hover{background:linear-gradient(180deg,#f8fafc,#eef2ff);border-color:#cbd5e1}
+    .subject-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+    .subject-card-title{font-size:15px;font-weight:600;color:var(--brand)}
     .subject-card .count{font-size:14px;color:var(--brand);font-weight:600;background:#eef2ff;padding:4px 10px;border-radius:6px}
+    .subject-card-buttons{display:flex;gap:8px}
+    .subject-card-buttons button{flex:1;padding:8px 12px;border:none;border-radius:6px;cursor:pointer;font-weight:600;font-size:14px;transition:all 0.2s ease}
+    .subject-card-buttons button:first-child{background:var(--brand);color:#fff}
+    .subject-card-buttons button:first-child:hover{filter:brightness(1.1)}
+    .subject-card-buttons button:last-child{background:#e5e7eb;color:var(--text)}
+    .subject-card-buttons button:last-child:hover{background:#cbd5e1}
 
     /* explanation area */
     .explanation{margin-top:8px;font-size:14px;color:var(--muted)}
+
+    /* hidden class */
+    .hidden{display:none!important}
+
+    /* ensure nav is always on top */
+    nav.site-nav{position:relative;z-index:1000}
   </style>
 </head>
 <body>
@@ -117,14 +131,14 @@
 
   <header>
     <h1>英語クイズ</h1>
-    <p>クイズ形式で英語学習</p>
+    <p id="header-subtitle">クイズ形式で英語学習</p>
   </header>
 
   <section>
     <!-- Quiz top / subject selection -->
     <div id="quiz-home" class="card">
       <h2>クイズを始める</h2>
-      <p>学習したいカテゴリを選んでください。各カテゴリをクリックするとランダムで10問出題されます。</p>
+      <p>学習したいカテゴリを選んでください。「10問」ボタンでランダムに10問、「全問」ボタンで全問題を出題します。</p>
       
       <div style="margin:20px 0">
         <h3 style="font-size:18px;color:var(--brand);margin-bottom:12px;border-bottom:2px solid #eef2ff;padding-bottom:8px">勘定科目クイズ</h3>
@@ -132,26 +146,56 @@
           <strong>注意：</strong>本クイズは日本基準を前提として作成しています。
         </p>
         <div class="subject-cards" role="list">
-          <button class="subject-card" data-category="勘定科目等" data-subcategory="資産" role="listitem" tabindex="0">
-            資産
-            <span class="count" data-key="資産">0問</span>
-          </button>
-          <button class="subject-card" data-category="勘定科目等" data-subcategory="負債" role="listitem" tabindex="0">
-            負債
-            <span class="count" data-key="負債">0問</span>
-          </button>
-          <button class="subject-card" data-category="勘定科目等" data-subcategory="収益" role="listitem" tabindex="0">
-            収益
-            <span class="count" data-key="収益">0問</span>
-          </button>
-          <button class="subject-card" data-category="勘定科目等" data-subcategory="費用" role="listitem" tabindex="0">
-            費用
-            <span class="count" data-key="費用">0問</span>
-          </button>
-          <button class="subject-card" data-category="勘定科目等" role="listitem" tabindex="0">
-            すべての問題
-            <span class="count" data-key="勘定科目等">0問</span>
-          </button>
+          <div class="subject-card" role="listitem">
+            <div class="subject-card-header">
+              <span class="subject-card-title">資産</span>
+              <span class="count" data-key="資産">0問</span>
+            </div>
+            <div class="subject-card-buttons">
+              <button data-category="勘定科目等" data-subcategory="資産" data-mode="random">10問</button>
+              <button data-category="勘定科目等" data-subcategory="資産" data-mode="all">全問</button>
+            </div>
+          </div>
+          <div class="subject-card" role="listitem">
+            <div class="subject-card-header">
+              <span class="subject-card-title">負債</span>
+              <span class="count" data-key="負債">0問</span>
+            </div>
+            <div class="subject-card-buttons">
+              <button data-category="勘定科目等" data-subcategory="負債" data-mode="random">10問</button>
+              <button data-category="勘定科目等" data-subcategory="負債" data-mode="all">全問</button>
+            </div>
+          </div>
+          <div class="subject-card" role="listitem">
+            <div class="subject-card-header">
+              <span class="subject-card-title">収益</span>
+              <span class="count" data-key="収益">0問</span>
+            </div>
+            <div class="subject-card-buttons">
+              <button data-category="勘定科目等" data-subcategory="収益" data-mode="random">10問</button>
+              <button data-category="勘定科目等" data-subcategory="収益" data-mode="all">全問</button>
+            </div>
+          </div>
+          <div class="subject-card" role="listitem">
+            <div class="subject-card-header">
+              <span class="subject-card-title">費用</span>
+              <span class="count" data-key="費用">0問</span>
+            </div>
+            <div class="subject-card-buttons">
+              <button data-category="勘定科目等" data-subcategory="費用" data-mode="random">10問</button>
+              <button data-category="勘定科目等" data-subcategory="費用" data-mode="all">全問</button>
+            </div>
+          </div>
+          <div class="subject-card" role="listitem">
+            <div class="subject-card-header">
+              <span class="subject-card-title">すべての問題</span>
+              <span class="count" data-key="勘定科目等">0問</span>
+            </div>
+            <div class="subject-card-buttons">
+              <button data-category="勘定科目等" data-mode="random">10問</button>
+              <button data-category="勘定科目等" data-mode="all">全問</button>
+            </div>
+          </div>
         </div>
       </div>
       
@@ -161,22 +205,46 @@
           <strong>注意：</strong>本クイズは日本の監査論を前提として作成しています。
         </p>
         <div class="subject-cards" role="list">
-          <button class="subject-card" data-category="監査論" data-subcategory="基本概念" role="listitem" tabindex="0">
-            基本概念
-            <span class="count" data-key="基本概念">0問</span>
-          </button>
-          <button class="subject-card" data-category="監査論" data-subcategory="リスク・手続" role="listitem" tabindex="0">
-            リスク・手続
-            <span class="count" data-key="リスク・手続">0問</span>
-          </button>
-          <button class="subject-card" data-category="監査論" data-subcategory="監査報告" role="listitem" tabindex="0">
-            監査報告
-            <span class="count" data-key="監査報告">0問</span>
-          </button>
-          <button class="subject-card" data-category="監査論" role="listitem" tabindex="0">
-            すべての問題
-            <span class="count" data-key="監査論">0問</span>
-          </button>
+          <div class="subject-card" role="listitem">
+            <div class="subject-card-header">
+              <span class="subject-card-title">基本概念</span>
+              <span class="count" data-key="基本概念">0問</span>
+            </div>
+            <div class="subject-card-buttons">
+              <button data-category="監査論" data-subcategory="基本概念" data-mode="random">10問</button>
+              <button data-category="監査論" data-subcategory="基本概念" data-mode="all">全問</button>
+            </div>
+          </div>
+          <div class="subject-card" role="listitem">
+            <div class="subject-card-header">
+              <span class="subject-card-title">リスク・手続</span>
+              <span class="count" data-key="リスク・手続">0問</span>
+            </div>
+            <div class="subject-card-buttons">
+              <button data-category="監査論" data-subcategory="リスク・手続" data-mode="random">10問</button>
+              <button data-category="監査論" data-subcategory="リスク・手続" data-mode="all">全問</button>
+            </div>
+          </div>
+          <div class="subject-card" role="listitem">
+            <div class="subject-card-header">
+              <span class="subject-card-title">監査報告</span>
+              <span class="count" data-key="監査報告">0問</span>
+            </div>
+            <div class="subject-card-buttons">
+              <button data-category="監査論" data-subcategory="監査報告" data-mode="random">10問</button>
+              <button data-category="監査論" data-subcategory="監査報告" data-mode="all">全問</button>
+            </div>
+          </div>
+          <div class="subject-card" role="listitem">
+            <div class="subject-card-header">
+              <span class="subject-card-title">すべての問題</span>
+              <span class="count" data-key="監査論">0問</span>
+            </div>
+            <div class="subject-card-buttons">
+              <button data-category="監査論" data-mode="random">10問</button>
+              <button data-category="監査論" data-mode="all">全問</button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -231,11 +299,12 @@
         }
       });
       
-      // Add click handlers for subject cards
-      document.querySelectorAll('.subject-card').forEach(btn => {
+      // Add click handlers for subject card buttons
+      document.querySelectorAll('.subject-card-buttons button').forEach(btn => {
         btn.addEventListener('click', function() {
           const category = this.getAttribute('data-category');
           const subcategory = this.getAttribute('data-subcategory');
+          const mode = this.getAttribute('data-mode');
           
           const filtered = questions.filter(q => {
             if (!q.category || q.category !== category) return false;
@@ -244,9 +313,17 @@
           
           if (filtered.length === 0) return;
           
-          // Shuffle and select 10 questions
-          const shuffled = filtered.sort(() => Math.random() - 0.5).slice(0, 10);
-          displayQuiz(shuffled);
+          // Select questions based on mode
+          let selectedQuestions;
+          if (mode === 'random') {
+            // Shuffle and select 10 questions
+            selectedQuestions = filtered.sort(() => Math.random() - 0.5).slice(0, 10);
+          } else {
+            // All questions in random order
+            selectedQuestions = filtered.sort(() => Math.random() - 0.5);
+          }
+          
+          displayQuiz(selectedQuestions);
         });
       });
     });
@@ -254,8 +331,11 @@
     function displayQuiz(quizQuestions) {
       const quizContainer = document.getElementById('quiz');
       const homeContainer = document.getElementById('quiz-home');
+      const headerSubtitle = document.getElementById('header-subtitle');
+      
       homeContainer.classList.add('hidden');
       quizContainer.classList.remove('hidden');
+      if (headerSubtitle) headerSubtitle.classList.add('hidden');
       
       let currentQuestion = 0;
       const userAnswers = []; // ユーザーの回答を記録
@@ -281,10 +361,13 @@
         
         quizContainer.innerHTML = `
           <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+              <div class="progress">${currentQuestion + 1} / ${quizQuestions.length}</div>
+              <button onclick="returnToHome()" style="padding:6px 12px;font-size:13px;background:#6b7280;color:#fff;border:none;border-radius:6px;cursor:pointer">トップに戻る</button>
+            </div>
             <div class="progress-bar" style="display:block">
               <div class="progress-fill" role="progressbar" style="width:${((currentQuestion + 1) / quizQuestions.length * 100)}%"></div>
             </div>
-            <div class="progress">${currentQuestion + 1} / ${quizQuestions.length}</div>
             <p><strong>${q.question}</strong></p>
             <p id="translation" style="color:var(--muted);font-size:14px;display:none">${q.translation}</p>
             <ul class="options">
@@ -474,6 +557,16 @@
         `;
         
         quizContainer.innerHTML = reviewHTML;
+      };
+      
+      window.returnToHome = function() {
+        const homeContainer = document.getElementById('quiz-home');
+        const quizContainer = document.getElementById('quiz');
+        const headerSubtitle = document.getElementById('header-subtitle');
+        
+        quizContainer.classList.add('hidden');
+        homeContainer.classList.remove('hidden');
+        if (headerSubtitle) headerSubtitle.classList.remove('hidden');
       };
       
       showQuestion();

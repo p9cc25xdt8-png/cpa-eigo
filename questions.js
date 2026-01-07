@@ -1419,28 +1419,6 @@ const questions = [
     subcategory: '基本概念'
   },
   {
-    id: 130,
-    question: "(　) refers to the auditor's state of mind being objective.",
-    translation: "精神的独立性とは、監査人の精神状態が客観的であることを指す。",
-    choices: ["Independence of mind", "Independence in appearance", "Professional competence"],
-    meanings: ["精神的独立性", "外観的独立性", "職業的能力"],
-    answer: 0,
-    category: '監査論',
-    source: 'user-provided list',
-    subcategory: '基本概念'
-  },
-  {
-    id: 131,
-    question: "(　) refers to avoiding circumstances that appear to impair independence.",
-    translation: "外観的独立性とは、独立性を損なうように見える状況を避けることを指す。",
-    choices: ["Independence in appearance", "Independence of mind", "Professional judgment"],
-    meanings: ["外観的独立性", "精神的独立性", "職業的判断"],
-    answer: 0,
-    category: '監査論',
-    source: 'user-provided list',
-    subcategory: '基本概念'
-  },
-  {
     id: 132,
     question: "A (　) occurs when personal interests interfere with professional duties.",
     translation: "利害関係とは、個人的利益が職業的義務と干渉する時に発生するものである。",
