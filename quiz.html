@@ -324,19 +324,25 @@
             selectedQuestions = filtered.sort(() => Math.random() - 0.5);
           }
           
-          displayQuiz(selectedQuestions);
+          // Create quiz title
+          const quizTitle = subcategory ? `${category} - ${subcategory}` : category;
+          
+          displayQuiz(selectedQuestions, quizTitle);
         });
       });
     });
     
-    function displayQuiz(quizQuestions) {
+    function displayQuiz(quizQuestions, quizTitle) {
       const quizContainer = document.getElementById('quiz');
       const homeContainer = document.getElementById('quiz-home');
       const headerSubtitle = document.getElementById('header-subtitle');
       
       homeContainer.classList.add('hidden');
       quizContainer.classList.remove('hidden');
-      if (headerSubtitle) headerSubtitle.classList.add('hidden');
+      if (headerSubtitle) {
+        headerSubtitle.textContent = quizTitle || 'クイズ';
+        headerSubtitle.classList.remove('hidden');
+      }
       
       let currentQuestion = 0;
       const userAnswers = []; // ユーザーの回答を記録
