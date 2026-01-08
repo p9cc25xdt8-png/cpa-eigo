@@ -8,7 +8,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '流動資産',
     explanation: '「短期的な流動性」とは即座に支払いに使える資金を指し、現金及び預金が最も流動性が高い。有価証券は換金に時間を要し、短期貸付金は回収まで期間がある。'
   },
   {
@@ -20,7 +20,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '流動資産',
     explanation: '1年以内に売却予定の株式や債券は流動資産の「有価証券」。1年超保有予定は固定資産の「投資有価証券」。現金及び預金は投資ではない。'
   },
   {
@@ -32,7 +32,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '流動資産',
     explanation: '約束手形や為替手形など証券形式で受け取った営業上の債権は「受取手形」。証券形式でない掛売りは「売掛金」、営業外取引は「未収入金」。'
   },
   {
@@ -44,7 +44,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '流動資産',
     explanation: '商品・製品の掛売りによる営業債権は「売掛金」。手形で受け取った場合は「受取手形」、役務提供で未収のものは「未収収益」。'
   },
   {
@@ -56,7 +56,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '流動資産',
     explanation: '継続的な役務提供で決算日までに発生しているが未収の収益は「未収収益」（発生主義）。未収入金は営業外の単発債権、受取利息は損益計算書の収益科目。'
   },
   {
@@ -68,7 +68,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '流動資産',
     explanation: '製造業で未加工の材料は「原材料」。加工中のものは「仕掛品」、完成品は「製品」。商品売買業では「商品」を使用。'
   },
   {
@@ -80,7 +80,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '流動資産',
     explanation: '商品売買業の棚卸資産は「商品」。製造業では「原材料」「仕掛品」「製品」を区分。完成した自社製品は「製品」。'
   },
   {
@@ -92,7 +92,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '流動資産',
     explanation: '製造途中の半製品は「仕掛品」。未加工の材料は「原材料」、完成品は「製品」。'
   },
   {
@@ -104,7 +104,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '流動資産',
     explanation: '自社製造の完成品は「製品」。他社から仕入れた転売品は「商品」、製造途中は「仕掛品」。'
   },
   {
@@ -116,7 +116,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '流動資産',
     explanation: '将来の貸倒れに備える評価性引当金は「貸倒引当金」（資産のマイナス）。実際に回収不能になった費用は「貸倒損失」、賞与引当金は負債科目。'
   },
   {
@@ -128,7 +128,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: '屋根と壁がある建造物は「建物」。土地に定着した建物以外の工作物（塀、舗装等）は「構築物」、土地そのものは「土地」。'
   },
   {
@@ -140,7 +140,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: '建物以外の土地定着物は「構築物」。屋根と壁のある建造物は「建物」、生産設備は「機械装置」。'
   },
   {
@@ -152,7 +152,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: '製造ラインの大型機械は「機械装置」。小型の工具や備品は「工具器具備品」、運搬用車両は「車両運搬具」。'
   },
   {
@@ -164,7 +164,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: '比較的小型の器具・備品は「工具器具備品」。大型生産設備は「機械装置」、消耗品は「貯蔵品」。'
   },
   {
@@ -176,7 +176,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: '土地そのものは「土地」（非償却資産）。建物は「建物」、土地定着物は「構築物」（いずれも償却資産）。'
   },
   {
@@ -188,7 +188,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: '建設中の固定資産への支出は「建設仮勘定」。完成時に本勘定（建物等）に振替。通常の前払いは「前払金」。'
   },
   {
@@ -200,7 +200,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: '過去の減価償却費の累計額は「減価償却累計額」（資産のマイナス科目）。当期の費用は「減価償却費」、資産価値の臨時的下落は「減損損失」。'
   },
   {
@@ -212,7 +212,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: 'コンピュータプログラムは無形固定資産の「ソフトウェア」。発明の権利は「特許権」、企業買収のプレミアムは「のれん」。'
   },
   {
@@ -224,7 +224,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: 'M&Aでの超過収益力は「のれん」（日本基準では20年以内に償却）。特許権等は「無形固定資産」の個別科目、株式投資は「投資有価証券」。'
   },
   {
@@ -236,7 +236,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: '発明の独占権は「特許権」。ブランド名等は「商標権」、コンピュータプログラムは「ソフトウェア」。'
   },
   {
@@ -248,7 +248,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: 'ブランド名・ロゴ等の使用独占権は「商標権」。発明の権利は「特許権」、買収プレミアムは「のれん」。'
   },
   {
@@ -260,7 +260,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: '1年超保有の戦略的投資は「投資有価証券」。1年以内売却予定は「有価証券」、子会社・関連会社株式は「関係会社株式」で別掲。'
   },
   {
@@ -272,7 +272,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '流動負債',
     explanation: '営業取引の掛仕入れ債務は「買掛金」。手形で支払う場合は「支払手形」、営業外取引は「未払金」。'
   },
   {
@@ -284,7 +284,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '流動負債',
     explanation: '営業取引で発行した手形債務は「支払手形」。手形以外の掛仕入れは「買掛金」、金融機関からの借入は「短期借入金」。'
   },
   {
@@ -296,7 +296,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '流動負債',
     explanation: '1年以内返済の借入金は「短期借入金」。1年超は「長期借入金」、営業取引の手形は「支払手形」。'
   },
   {
@@ -308,7 +308,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '流動負債',
     explanation: '長期借入金の1年以内返済分は流動負債の「1年内返済予定の長期借入金」に振替。当初から短期の借入は「短期借入金」。'
   },
   {
@@ -320,7 +320,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '流動負債',
     explanation: '固定資産購入等の営業外取引の未払債務は「未払金」。営業上の仕入債務は「買掛金」、継続的役務の未払いは「未払費用」。'
   },
   {
@@ -332,7 +332,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '流動負債',
     explanation: '時間の経過により継続的に発生する未払費用は「未払費用」（発生主義）。単発の営業外取引は「未払金」、営業債務は「買掛金」。'
   },
   {
@@ -344,7 +344,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '流動負債',
     explanation: '商品・サービス提供前の受取額は「前受金」。一時的な預り（税金等）は「預り金」、継続的役務の前受けは「前受収益」。'
   },
   {
@@ -356,7 +356,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '流動負債',
     explanation: '第三者のために一時的に預かる金銭は「預り金」（源泉税、社会保険料等）。商品引渡し前の受取は「前受金」、自社の未払いは「未払費用」。'
   },
   {
@@ -368,7 +368,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '流動負債',
     explanation: '時間の経過により実現する収益の前受分は「前受収益」（発生主義）。単発取引の前受けは「前受金」、預り金は「預り金」。'
   },
   {
@@ -380,7 +380,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '流動負債',
     explanation: '賞与支給見込額のうち当期負担分は「賞与引当金」。既に確定した未払分は「未払費用」、退職給付債務は「退職給付に係る負債」。'
   },
   {
@@ -392,7 +392,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '固定負債',
     explanation: '1年超の借入金は「長期借入金」。1年以内は「短期借入金」、債券発行は「社債」。ワンイヤールール適用。'
   },
   {
@@ -404,7 +404,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '固定負債',
     explanation: '不特定多数の投資家向けに発行する債券は「社債」。金融機関からの借入は「長期借入金」または「短期借入金」。'
   },
   {
@@ -416,7 +416,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '固定負債',
     explanation: '退職給付債務から年金資産を控除した額は「退職給付に係る負債」。賞与は「賞与引当金」、通常の未払いは「未払費用」。'
   },
   {
@@ -428,7 +428,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '流動負債',
     explanation: '製品保証による将来の費用負担見込額は「製品保証引当金」。既に発生した未払いは「未払費用」、賞与は「賞与引当金」。'
   },
   {
@@ -440,7 +440,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '流動負債',
     explanation: '当期の法人税・住民税・事業税の未払額は「未払法人税等」。税効果会計の負債は「繰延税金負債」、通常の未払いは「未払費用」。'
   },
   {
@@ -452,7 +452,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '流動負債',
     explanation: '仮受消費税から仮払消費税を控除した納付額は「未払消費税等」。法人税等は「未払法人税等」、一般的な預りは「預り金」。'
   },
   {
@@ -920,7 +920,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '流動資産',
     explanation: '継続的な役務提供の前払分は「前払費用」（発生主義）。既に発生した未払いは「未払費用」、商品等の手付金は「前払金」。'
   },
   {
@@ -932,7 +932,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '流動資産',
     explanation: '未使用の消耗品・事務用品等は「貯蔵品」（資産）。使用時に「消耗品費」に振替。商品・製品等は「棚卸資産」。'
   },
   {
@@ -944,7 +944,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '流動資産',
     explanation: '将来減算一時差異等による税効果は「繰延税金資産」。将来加算一時差異は「繰延税金負債」、当期納税額は「未払法人税等」。'
   },
   {
@@ -956,7 +956,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '固定負債',
     explanation: '将来加算一時差異による税効果は「繰延税金負債」。将来減算一時差異は「繰延税金資産」、当期納税額は「未払法人税等」。'
   },
   {
@@ -968,7 +968,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: '運搬用の車両は「車両運搬具」（償却資産）。製造設備は「機械装置」、小型の器具は「工具器具備品」。'
   },
   {
@@ -980,7 +980,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: '建物に付属する設備（電気・空調等）は「建物附属設備」。建物本体は「建物」、原状回復の修理は「修繕費」。'
   },
   {
@@ -992,7 +992,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: '固定資産取得の手付金・中間金は「建設仮払金」。継続的役務の前払いは「前払費用」、建設中の支出は「建設仮勘定」。'
   },
   {
@@ -1004,7 +1004,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: '1年超の貸付金は「長期貸付金」。1年以内回収は「短期貸付金」、営業外の未収金は「未収入金」。'
   },
   {
@@ -1016,7 +1016,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: '返還される敷金・保証金は「差入保証金」（投資その他の資産）。賃料の前払いは「前払費用」、金銭貸付は「長期貸付金」。'
   },
   {
@@ -1028,7 +1028,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: '支配・影響力を持つ関係会社株式は「関係会社株式」。その他の長期保有株式は「投資有価証券」、短期売買目的は「有価証券」。'
   },
   {
@@ -1040,7 +1040,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: 'ゴルフ会員権等は「会員権」（投資その他の資産）。株式・債券は「投資有価証券」、特許権等は「無形固定資産」。'
   },
   {
@@ -1052,7 +1052,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: '解約返戻金のある生命保険等は「保険積立金」（投資その他の資産）。有価証券は別科目、保険料の前払いは「前払費用」。'
   },
   {
@@ -1064,7 +1064,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '流動負債',
     explanation: '社債の1年以内償還分は流動負債の「1年内償還予定の社債」に振替。1年超分は「社債」、借入金は別科目。'
   },
   {
@@ -1076,7 +1076,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '負債',
+    subcategory: '固定負債',
     explanation: '有形固定資産の除去・原状回復義務は「資産除去債務」（取得時に計上）。製品保証は別科目、通常の未払いは「未払費用」。'
   },
   {
@@ -1148,7 +1148,7 @@ const questions = [
     answer: 0,
     category: '勘定科目等',
     source: 'user-provided list',
-    subcategory: '資産',
+    subcategory: '固定資産',
     explanation: '年金資産＞退職給付債務の場合は「前払年金費用」（資産）。逆の場合は「退職給付に係る負債」、当期費用は「退職給付費用」。'
   },
   {

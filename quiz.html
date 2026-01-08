@@ -169,6 +169,16 @@
           </div>
           <div class="subject-card" role="listitem">
             <div class="subject-card-header">
+              <span class="subject-card-title">純資産</span>
+              <span class="count" data-key="純資産">0問</span>
+            </div>
+            <div class="subject-card-buttons">
+              <button data-category="勘定科目等" data-subcategory="純資産" data-mode="random">10問</button>
+              <button data-category="勘定科目等" data-subcategory="純資産" data-mode="all">全問</button>
+            </div>
+          </div>
+          <div class="subject-card" role="listitem">
+            <div class="subject-card-header">
               <span class="subject-card-title">収益</span>
               <span class="count" data-key="収益">0問</span>
             </div>
@@ -272,6 +282,7 @@
       const counts = {
         '資産': 0,
         '負債': 0,
+        '純資産': 0,
         '収益': 0,
         '費用': 0,
         '勘定科目等': 0,
@@ -447,6 +458,14 @@
         });
         resultHTML += '</div>';
         
+        // 解説を追加（existsの場合）
+        if (q.explanation) {
+          resultHTML += `<div style="margin-top:12px;padding:12px;background:#fffbeb;border-left:4px solid #fbbf24;border-radius:6px;font-size:14px;color:var(--text)">
+            <div style="font-weight:600;margin-bottom:6px;color:#b45309">解説：</div>
+            ${q.explanation}
+          </div>`;
+        }
+        
         // 次の問題へボタンを追加
         if (currentQuestion < quizQuestions.length - 1) {
           resultHTML += '<button onclick="goToNextQuestion()" style="margin-top:16px">次の問題へ</button>';
@@ -556,7 +575,19 @@
         
         reviewHTML += `
             </div>
-            
+        `;
+        
+        // 解説を追加（existsの場合）
+        if (q.explanation) {
+          reviewHTML += `
+            <div style="margin-top:16px;padding:12px;background:#fffbeb;border-left:4px solid #fbbf24;border-radius:6px;font-size:14px;color:var(--text)">
+              <div style="font-weight:600;margin-bottom:6px;color:#b45309">解説：</div>
+              ${q.explanation}
+            </div>
+          `;
+        }
+        
+        reviewHTML += `
             <div style="margin-top:24px;display:flex;gap:8px">
               <button onclick="showResults()" style="flex:1">結果一覧に戻る</button>
             </div>
